@@ -2,6 +2,7 @@
 import { useState } from "react"
 
 const SendMessages = () => {
+
     const [value, setValue] = useState("");
     // console.log(value);
     const handleMessages = (e) =>
@@ -22,7 +23,7 @@ const SendMessages = () => {
         value={value}
         onChange={(e)=>
         {
-            // e.preventDefault;
+            e.preventDefault;
             setValue(e.target.value);
         }}
         />

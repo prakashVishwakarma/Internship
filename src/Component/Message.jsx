@@ -1,31 +1,48 @@
 // import React from 'react'
 
-const Message = ({message}) => {
+import { Fragment } from "react"
+
+const Message = ({ chatData }) => {
   return (
     <div>
-    <div className="chat chat-start">
- 
-  <div className="chat-header">
-   {message.name}
+      {/* left chats */}
+      {
 
-  </div>
-  <div className="chat-bubble">{message.message}</div>
-  <div className="chat-footer opacity-50">
-    Delivered
-  </div>
-</div>
-<div className="chat chat-end">
-  
-  
-  <div className="chat-header">
-    Anakin
+        chatData?.map((text, i) => {
+          return (<Fragment key={i}>
+            {
+              false ? <div className="chat chat-start">
+                <div className="chat-header">
+                  {'message.name'}
+                </div>
+                <div className="chat-bubble">{text}</div>
+                <div className="chat-footer opacity-50">
+                  Delivered
+                </div>
+              </div>
+                :
+                <div className="chat chat-end">
+                  <div className="chat-header">
+                    Anakin
+                  </div>
+                  <div className="chat-bubble">{text}</div>
+                  <div className="chat-footer opacity-50">
+                  Delivered
+                  </div>
+                </div>
+            }
+          </Fragment>)
+        })
 
-  </div>
-  <div className="chat-bubble">Hii!</div>
-  <div className="chat-footer opacity-50">
-   
-  </div>
-</div>
+
+      }
+
+
+
+
+      {/* right chats */}
+
+
     </div>
   )
 }
